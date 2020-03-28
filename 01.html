@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul li{
+            list-style: none;
+            display:inline-block;
+            width:10%;
+            height:30px;
+            margin:20px 20px;
+            justify-content: space-around;
+            text-align: center;
+            line-height: 30px;
+        }
+        ul{
+            width:100%;
+            flex-wrap: flex;
+
+        }
+        button{
+            width:100%;
+            height:30px;
+
+        }
+        .wrap{
+            flex-wrap: flex;
+        
+            height:600px;
+        }
+        .element{
+            flex-wrap:flex;
+            width:100%;
+            height:100px;
+            align-items: center;
+            background-color: aquamarine;
+            text-align: center;
+            line-height: 100px;
+            
+
+        }
+        .content{
+            width:100px;
+            height:100px;
+            background-color: blueviolet;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul>
+            <li>
+                <button>鼠标抬起</button>
+            </li>
+            <li>
+                <button>鼠标点击</button>
+            </li>
+            <li>
+                <button>点击右键</button>
+            </li>
+            <li>
+                <button>左键双击</button>
+            </li>
+            <li>
+                <button>鼠标移入</button>
+            </li>
+            <li>
+                <button>鼠标移出</button>
+            </li>
+        </ul>
+        <div class="element">元素</div>
+        <div class="content">
+            <p>world</p>
+        </div>
+        <img src="../images/1.jpg" alt="111" name="hello">
+    </div>
+    <script> 
+        Element = document.querySelector(".element");
+        var aBto = document.querySelectorAll("button");
+        aBto[0].onmouseup= function factory(){
+            Element.style.backgroundColor="green"
+        };
+        aBto[1].onclick = function(){
+            Element.style.cssText="width:50%;transition:1s;";
+        }
+        aBto[2].oncontextmenu = function(){
+            Element.style.cssText = "font-size:100px; transition:1s;";
+        }
+        aBto[3].ondblclick = function(){
+            Element.style="width:100px; height:100px; border-radius:100px; transition:1s;";
+        }
+        aBto[4].onmouseenter = function(){
+            Element.innerText="hello";
+        }
+        aBto[5].onmouseleave = function(){
+            Element.innerText="world";
+            Element.style.cssText="font-size:20px; color:green; transition:1s;"
+        }
+        window.onresize = function(){
+            Element.style="width:50%;heihght:50%;background-color:orange; transition:1s;";
+        }
+        window.onscroll = function(){
+            Element.style="width:10%;background-color:gray; transition:2s;";
+        }
+        var content=document.querySelector(".content");
+       /* content.innerText="hello";*/
+        content.innerHTML="hello<p>world</p>"
+        var name=content.className;
+        content.className="hello";
+        var img=document.querySelector("img");
+        console.log(img.src)
+        img.src="../images/2.jpg";
+        console.log(img.getAttribute("name"));
+        console.log(img.getAttribute("alt"));
+        console.log(img.getAttribute("src"));
+        img.setAttribute("name","world");
+        img.setAttribute("src","../images/3.jpg");
+        img.removeAttribute("alt");
+        img.setAttribute("size","100*200");
+
+        function factory1(x,y){
+            var data=x+y;
+            return data;
+        }
+        var z=factory1(1,2);
+        var a=1,b=2;
+        function factory2(){
+            var data=a+b;
+            return data;
+        }
+        var c=factory2();
+
+        for(let i=0;i<5;i++){
+            aBto[i].click=function(){
+                console.log(i);
+            }
+        }
+    </script>   
+</body>
+</html>

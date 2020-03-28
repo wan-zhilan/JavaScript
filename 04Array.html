@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+                var colors=["red","blue","black"];
+               // var colors2=colors.slice(2,2);//显示[],遵循左闭右开原则
+               var colors2=colors.splice(1,1);//删除
+                console.log(colors);//["red","black"]
+                console.log(colors2);//["blue"]
+                var colors3=colors.splice(1,0,"yellow");//插入
+                console.log(colors);//["red", "yellow", "black"]
+                console.log(colors3);//[]
+                var colors4=colors.splice(0,2,"white","purple");//替换，删掉两个，插入两个
+                console.log(colors);//["white", "purple", "black"]
+                console.log(colors4);//["red", "yellow"]
+        </script>
+</body>
+
+</html>

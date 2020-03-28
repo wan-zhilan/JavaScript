@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width:500px;
+            height:500px;
+        }
+        table{
+            width:400px;
+            height:100px;
+            border:1px solid black;
+            border-collapse: collapse;       
+        }
+        th,td,tr{
+            border:1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+               
+               <tr>
+                    <th>商品</th>
+                    <th>单价</th>
+                    <th>数量</th>
+                    <th>总价</th>
+                </tr>
+            </thead>
+            <thead>
+                <tr>
+                    <td>
+                        <img src=../images/01.jpg width="50px" height="50px" alt="">
+                    </td>
+                    <td class="price">20</td>
+                    <td>
+                        <button class="sub">-</button>
+                        <span class="num">0</span>
+                        <button class="add">+</button>
+                    </td>
+                    <td class="totalprice">0</td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <script>
+        let sub=document.querySelector(".sub");
+            add=document.querySelector(".add");
+            num=document.querySelector(".num");
+            price=document.querySelector(".price");
+            totalPrice=document.querySelector(".totalprice");
+            add.onclick=function(){
+                num.innerText=parseInt(num.innerText)+1;
+                totalPrice.innerText=(parseFloat(price.innerText)*parseFloat(num.innerText)).toFixed(1);
+            }
+            sub.onclick=function(){
+                if(parseInt(num.innerText)>0){
+                    num.innerText=parseInt(num.innerText)-1;
+                    totalPrice.innerText=(parseFloat(price.innerText)*parseFloat(num.innerText)).toFixed(1);
+                }else{
+                    totalPrice.innerText=0;
+                }
+            }
+
+    </script>
+</body>
+</html>

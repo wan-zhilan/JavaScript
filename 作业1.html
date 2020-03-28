@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width:500px;
+            height:100px;
+           margin:0 auto;
+        }
+       input{
+           display:block;
+           
+           width:200px;
+           height:50px;
+       } 
+   
+       .msg{
+           display:block;
+           margin-right:100px;
+       }
+       .msglist{
+           list-style: none;
+           border-bottom: 1px dashed;
+           line-height: 30px;
+           text-align: center;
+       }
+    </style>
+</head>
+<body>
+      
+   <div>
+        <input>
+        </input>
+       <button>提交</button>
+       <ul class="msg">
+
+       </ul>
+   </div> 
+   <script>
+       let input=document.querySelector("input");
+            btn=document.querySelector("button");
+            msg=document.querySelector(".msg");
+            btn.onclick=function(){
+                if(input.value){
+                    msg.innerHTML+="<li class='msglist'>"+input.value+"</li>";
+                    input.value="";
+                }else{
+                    alert("未输入信息");
+                }
+            }
+
+   </script>
+</body>
+</html>
